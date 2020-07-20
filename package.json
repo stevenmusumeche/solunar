@@ -1,0 +1,22 @@
+{
+  "name": "solunar",
+  "version": "1.0.0",
+  "description": "pure typescript solunar table calculator",
+  "main": "index.js",
+  "author": "Steven Musumeche <steven@musumeche.com>",
+  "license": "MIT",
+  "dependencies": {
+    "suncalc": "^1.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4",
+    "rimraf": "^3.0.2",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
+  },
+  "scripts": {
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' ./src/index.ts",
+    "build": "yarn clean && tsc",
+    "clean": "rimraf ./dist"
+  }
+}
