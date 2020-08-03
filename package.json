@@ -1,6 +1,6 @@
 {
   "name": "@stevenmusumeche/solunar",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "pure typescript solunar table calculator",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
