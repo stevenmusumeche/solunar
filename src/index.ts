@@ -30,8 +30,9 @@ export interface SolunarData {
   minorPeriods: SolunarRange[];
 }
 
-export function getSolunarData(day: Day, point: Point): SolunarData {
-  const { start, end } = getDayBoundaries(day);
+export function getSolunarData(startOfDay: Date, point: Point): SolunarData {
+  const start = startOfDay;
+  const end = addDays(startOfDay, 1);
 
   const { sunrise, sunset } = suncalc.getTimes(end, point.lat, point.lon);
 
@@ -70,15 +71,6 @@ export function getSolunarData(day: Day, point: Point): SolunarData {
     majorPeriods: solunarPeriods.filter((x) => x.type === "major"),
     minorPeriods: solunarPeriods.filter((x) => x.type === "minor"),
   };
-}
-
-function getDayBoundaries(day: Day) {
-  const start = toDate(new Date(day.year, day.month - 1, day.day), {
-    timeZone: day.timeZone,
-  });
-  const end = addDays(start, 1);
-
-  return { start, end };
 }
 
 function calculateDayScore(

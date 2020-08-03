@@ -14,7 +14,7 @@ npm install @stevenmusumeche/solunar
 
 ```ts
 const data = getSolunarData(
-  { month: 6, day: 13, year: 2020, timeZone: "America/Chicago" },
+  new Date(), // send midnight of the date using the user's timezone offset
   {
     lat: 29.47173,
     lon: -90.5561,
