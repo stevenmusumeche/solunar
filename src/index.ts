@@ -2,16 +2,6 @@ import { addDays, addMinutes, isAfter, isWithinInterval } from "date-fns";
 import { toDate } from "date-fns-tz";
 import suncalc from "suncalc";
 
-const result = getSolunarData(
-  { month: 1, day: 1, year: 2020, timeZone: "America/Chicago" },
-  {
-    lat: 29.47173,
-    lon: -90.5561,
-  }
-);
-
-console.log(JSON.stringify(result));
-
 interface Point {
   lat: number;
   lon: number;
